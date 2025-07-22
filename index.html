@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Teaching Experience</title>
+  <style>
+  * {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fdfdfd;
+  color: #333;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.sidebar {
+  width: 240px;
+  background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+  padding: 20px;
+  border-right: 1px solid #ccc;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+.sidebar a {
+  display: block;
+  padding: 12px 15px;
+  text-decoration: none;
+  color: #555;
+  margin-bottom: 5px;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #e2e6ea;
+  color: #000;
+}
+
+.sidebar a.active {
+  background-color: #c92c2c;
+  color: #fff;
+  font-weight: bold;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 30px;
+  overflow-y: auto;
+  background-color: #fff;
+  height: 100vh;
+}
+
+h1, h2 {
+  color: #2f2f2f;
+  margin-top: 0;
+}
+
+p, li {
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+ul {
+  margin-left: 20px;
+  padding-left: 15px;
+}
+
+a {
+  color: #0077cc;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.section {
+  display: none;
+}
+
+.section.active {
+  display: block;
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.protected {
+  display: none;
+}
+</style>
+  <script>
+    function checkPassword() {
+      const password = prompt("Enter password to access the content:");
+      if (password === "teach2025") {
+        document.getElementById("protected-content").style.display = "flex";
+      } else {
+        alert("Incorrect password!");
+      }
+    }
+function showSection(id) {
+      document.querySelectorAll('.section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.querySelectorAll('.sidebar a').forEach(link => {
+        link.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+      document.querySelector(`[data-target='${id}']`).classList.add('active');
+    }
+  </script>
+</head>
+<body onload="checkPassword()">
+  <div id="protected-content" class="container protected">
+    <div class="sidebar">
+      <a data-target="home" class="active" onclick="showSection('home')">Home</a>
+      <a data-target="co-teaching" onclick="showSection('co-teaching')">Co-Teaching</a>
+      <a data-target="responsibilities" onclick="showSection('responsibilities')">Student Teaching Responsibilities</a>
+      <a data-target="dates" onclick="showSection('dates')">Important Dates and Information</a>
+      <a data-target="evaluation" onclick="showSection('evaluation')">Observation and Evaluation Forms</a>
+      <a data-target="forms" onclick="showSection('forms')">Student Teacher Forms</a>
+      <a data-target="cooperating" onclick="showSection('cooperating')">Cooperating Teacher Information & Forms</a>
+      <a data-target="supervisor" onclick="showSection('supervisor')">University Supervisor Forms</a>
+      <a data-target="edtpa" onclick="showSection('edtpa')">edTPA Information</a>
+      <a data-target="Materials" onclick="showSection('Materials')">Download Materials</a>
+    </div>
+    <div class="content">
+      <section id="home" class="section">
+        <h2>The Student Teaching Experience</h2>
+<p>The Beeghly College of Liberal Arts, Social Sciences, and Education’s student teaching experience plays a significant role in teacher education candidates’ development as professional educators.</p>
+            <ul>
+          <li>The student teaching experience requires a substantial time commitment, 16 weeks following the respective district’s teacher hours, with candidates considered as quasi staff members insofar as district policy, classroom instruction, and school building expectations are concerned.  Candidates’ failure to comply with district policy and procedures may subject them to reprimands and/or removal from the student teaching experience.</li><br>
+          <li>The purpose for the student teaching experience is to learn about teaching.  Student teacher candidates should have ample opportunity to engage in reflective activities, and assess his/her teacher behaviors and their consequences.  All learning situations bring opportunities for success and failure; and student teaching is no exception.  The student teaching experience provides candidates the opportunity to collaborate with teaching professionals, further refine their teaching style, increase their grade level content knowledge, and begin to establish classroom management and discipline.  This occurs through candidates’ progressively teaching an instructional period at a time and building to a full day of teaching for multiple, consecutive weeks, for multiple instructional periods with units of instruction aligned with professional and state academic content standards.  Cooperating teachers and university supervisors play an integral part in candidates’ professional development through mentoring, observation and providing constructive feedback.</li><br>
+          <li>In order to participate in the student teaching experience, all student teaching candidates are screened for eligibility and must meet specific course and grade point average prerequisites, course prerequisites with a recommendation to move to student teaching, and passage of the candidate’s respective OAE licensure exam(s).  Then, at the conclusion of the experience, candidates ‘student teaching development is reviewed for a determination to endorse the teacher candidate for a teaching license.</li><br>
+        
+        </ul>
+        <p>We acknowledge and thank our school district partners for their support and commitment to providing instructional guidance and opportunities and mentoring during this important experience which guides our teacher candidates towards successful practice and meaningful careers. 
+
+</p>
+<p>
+    During the student teaching experience, for any questions or concerns contact:<br></p>
+          
+          <strong>Dr. Kathleen Cripe</strong><br>
+          Teacher Education and Leadership Studies Department Chair<br>
+          <a href="mailto:mlcripe@ysu.edu">mlcripe@ysu.edu</a><br>
+          330.941.3251<br><br>
+
+          <strong>Therese Kightlinger</strong><br>
+          Administrator Student Field Experiences<br>
+          <a href="mailto:takightlinger@ysu.edu">takightlinger@ysu.edu</a><br>
+          330.941.3735
+        
+      </section>
+
+
+    
+
+      <section id="co-teaching" class="section">
+        <h2>Co-Teaching</h2>
+        <p>The purpose of the student teaching experience is to learn about teaching. The Teacher Candidate should have ample opportunity to develop and practice the knowledge and skills required in the Ohio Standards for the Teaching Professions and engage in reflective activities to assess his/her teacher behaviors and their consequences. Therefore, the Beeghly College of Liberal Arts, Social Scienes, and Education recommends cooperating teachers mentor our Teacher Candidates by incorporating a co-teaching model during the student teaching experience. This approach will allow the Teacher Candidate to have a gradual increase in responsibilities with consistent monitoring and feedback from the cooperating teacher without the cooperating teacher giving up his/her classroom.
+</p>
+<ul>
+          <li><a href="https://drive.google.com/file/d/0BzSyAbIHrjTOR2wzRnVNbVNMVVk/view?resourcekey=0-5LvXnVMf2SO2vGJNQ2hhKg">Co-Teaching Information</a></li>
+          <li><a href="https://drive.google.com/file/d/0BzSyAbIHrjTOaWVFcTRTRGRDWmM/view?resourcekey=0-oBhPOmAPChVAncWo5VGH0A">Recommended Mentoring Model</a></li>
+          <li><a href="https://drive.google.com/file/d/0BzSyAbIHrjTOZThpLWZkaFkxcXM/view?resourcekey=0-86-Bmg4QXo-cuC59fb6XoA">Co-Teaching Strategies & Examples</a></li>
+        </ul>
+      </section>
+
+      <section id="responsibilities" class="section">
+  <h2>Student Teaching Responsibilities</h2>
+
+  <p style="color: green; font-weight: bold;"><em>DOWNLOAD TO PRINT</em></p>
+
+  <p>
+    <a href="https://docs.google.com/document/d/1WW8L61PjwVBDTt1kA4EmL9yeXHkQT2hP/edit?tab=t.0" style="color: blue; font-weight: bold;">
+      Student Teaching Responsibilities and Requirements
+    </a>
+  </p>
+
+  <p style="color: green; font-weight: bold;">
+    Required to complete the following, on TaskStream, by the end of orientation
+  </p>
+
+  <ul style="list-style-type: circle; margin-left: 20px;">
+    <li><p  style="color: blue;">Social Media Acknowledgement</p></li>
+    <li><p  style="color: blue;">Professionalism Acknowledgement</p></li>
+    <li><p style="color: blue;">Licensure Information and Timelines</p></li>
+    <li><p style="color: blue;">ST Orientation Evaluation</p></li>
+    <li>
+      <p style="color: blue;">Educators and the Opioid Crisis V2 upload score report to TaskStream DRF Student Teaching Unit</p><br>
+       <a href="https://osuehe.catalog.instructure.com" style="color:gray 14px;">https://osuehe.catalog.instructure.com/courses/educators-and-the-opioid-crisis</a>
+      </span>
+    </li>
+  </ul>
+
+  <p style="color: green; font-weight: bold;">
+    Required to complete the CPAST module, on Blackboard, by the end of orientation.<br>
+    <span style="font-weight: normal;">Minimum of 80% accuracy required on each module.</span>
+  </p>
+
+</section>
+      <section id="dates" class="section">
+  <h2>Important Dates and Information</h2>
+
+  <p style="color: green; font-weight: bold;"><em>DOWNLOAD TO PRINT DOCUMENTS</em></p>
+
+  <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px;">
+    <!-- Left Column -->
+    <div style="flex: 1; min-width: 280px;">
+      <h3 style="color: red;">Important Information</h3>
+      <ul>
+        <li><a href="https://drive.google.com/file/d/1ni4cxq2eF9JAVpN_KME_U8YYXEN4pzKF/view" style="color: blue;">Orientation Schedule</a></li>
+        <li><a href="https://docs.google.com/document/d/1gH2wSo4JYxhbn0ex1wK7Zq-kRnnKvHGZ/edit?tab=t.0" style="color: blue;">Resume Template and Handshake</a></li>
+        <li><a href="https://drive.google.com/file/d/1gsr1RJ51LazTng2ONbPiUW0RkTPE838d/view" style="font-style: italic; color: blue;">Guidelines for Student Teaching handbook</a></li>
+      </ul>
+
+      <h3 style="color: red;">Professional Development</h3>
+      <ul>
+        <li>
+          <span style="color: blue; font-weight: bold;">TCESC Schedule</span><br>
+          <span>Thursday, January 9, 2025<br>
+          7:45am - 3:45pm<br>
+          Trumbull County Educational Service Center<br>
+          6000 Youngstown-Warren Rd.<br>
+          Niles, OH 44446</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Right Column -->
+    <div style="flex: 1; min-width: 280px;">
+      <h3 style="color: red;">Instruction, Observation, and Evaluation Schedule</h3>
+      <ul>
+        <li><a href="https://drive.google.com/file/d/1BHKRBsh8xB8MYNy1lDgnsLrW-v7o6HFV/view" style="color: blue;">AYA/SPED/MUSIC<br>16 week schedule</a></li>
+        <li><a href="https://drive.google.com/file/d/1ZbK-Lj9liaUMahjaB47_XDbRvRvwtXfW/view" style="color: blue;">MCE/ELIS//ART<br>8 week schedule</a></li>
+      </ul>
+
+      <ul>
+        <li><a href="https://docs.google.com/document/d/1YrN94Rk_eUKcYUovvHa0wpLRDkWdIEcp/edit?tab=t.0#heading=h.gjdgxs" style="color: blue;">Student Teaching Dress Code</a></li>
+        <li><a href="https://drive.google.com/file/d/1DcorkEqBko0IMERBrHWRv7G79XADFZh0/view" style="color: blue;">Student Teaching Policies</a></li>
+      </ul>
+    </div>
+  </div>
+
+</section>
+      <section id="evaluation" class="section">
+        <h2>Observation and Evaluation Forms</h2>
+        <p style="color: green; font-weight: bold;"><em>DOWNLOAD TO PRINT</em></p>
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px;">
+    <!-- Left Column -->
+    <div style="flex: 1; min-width: 280px;">
+       <ul>
+      <li><a href="https://drive.google.com/file/d/1B4vAwGAfApaIuHp2bux6zG5iSxrwYUgg/view">Observation Form </a></li>
+        <li><a href="https://drive.google.com/file/d/1k4xKyKDoBnKKQ5xCLkTdpgIVjSb85lUc/view">Consensus_Midterm_CPAST </a></li>
+         <li><a href="https://drive.google.com/file/d/1wVH6gl52v-6hM0SU5LpCgJ8lTVDkkssi/view">Consensus_Multi_Midterm_CPAST</a></li>
+<li><a href="https://drive.google.com/file/d/1V16yZwWPDrsUk3UqbggeoVMPKA09KFky/view">Midterm_Acknowledgement </a></li>
+ <li><a href="https://drive.google.com/file/d/1k5cqDyBQNyH5L3IF-CQB6apy6KSWBdhU/view">Consensus_Final_CPAST </a></li>
+<li><a href="https://drive.google.com/file/d/1AKY4JDGrJA80MH8KQIawNYePCBdDAjvb/view">FINAL_Endorsement </a></li>
+</ul></div>
+ <!-- Right Column -->
+    <div style="flex: 1; min-width: 280px;">
+      <ul>
+        <li><a href="https://drive.google.com/file/d/1xHiz2PMwPUFfQzkNfGagazSCQnjQnt-q/view">EDA Rubric </a></li>
+<li><a href="https://drive.google.com/file/d/1VcQxCLnY9PlDNV6_2dwR5WyNTDgSVela/view">MCE Final Assessment </a></li>
+</ul></div>
+</section>
+
+<section id="forms" class="section" style= "gap: 60px; justify-content: start; align-items: flex-start; flex-wrap: wrap; margin-top: 20px;">
+ 
+  <!-- Left Column -->
+  <div style="flex: 1; min-width: 320px;">
+    <h2 style="font-weight: normal; font-size: 24px;">Student Teacher Forms</h2>
+    <h3 style="color: rgb(15, 101, 52); font-weight: bold;">DOWNLOAD TO PRINT</h3>
+    
+    <ul style="list-style-type: disc; padding-left: 20px;">
+      <li><a href="https://drive.google.com/file/d/1dVEEnMXHFkUUQXky77iZOgZXRG32yRd9/view">ST Absentee Form</a></li>
+      <li><a href="https://drive.google.com/file/d/13FvS5exivNMZSJjb2nsOgNFLCfTtm0Ta/view">Parent Teacher Conference Verification</a></li>
+      <li><a href="https://drive.google.com/file/d/1gPNt_L2sH269faf3BUTQ0I_Gtrxa4aix/view">Authorization and Waiver Form</a></li>
+      <li><a href="https://docs.google.com/document/d/1R8aFCkXY6N5Aa6rtC_A4FHaflqdSbcw8/edit?tab=t.0">Weekly Progress Log</a></li>
+    </ul>
+
+    <h3 style="font-weight: bold; margin-top: 20px;">Seminar Forms</h3>
+    <ul style="list-style-type: disc; padding-left: 20px;">
+      <li><a href="https://docs.google.com/document/d/1xdkcIoI5xSLJuPJ5HUFG6T4Vy9PVOnGa/edit?tab=t.0">Reflection #1 and #3 Worksheet</a></li>
+      <li><a href="https://drive.google.com/file/d/11PEhSXDubPqlXEqwgZayoviW1PuRhJKn/view">Teacher Candidate Reflection</a></li>
+      <li><a href="https://drive.google.com/file/d/1RvgwuRTf5AH_SlonboL0hO_y4B5EuCgX/view">Adkins and Murphy Model of Reflection</a></li>
+    </ul>
+  </div>
+
+  <!-- Right Column -->
+  <div style="flex: 1; min-width: 320px;">
+    <h3 style="color: rgb(204, 71, 19); font-weight: bold;">DOWNLOAD lesson plan format. DO NOT use Google Docs.</h3>
+    
+    <ul style="list-style-type: disc; padding-left: 20px;">
+      <li><a href="https://drive.google.com/file/d/1rDIVgNfw4otT-aOGP4fmAV918IAX61Qy/view">Lesson Plan Cover</a></li>
+      <li><a href="https://docs.google.com/document/d/1Cp4YORS64e0Oh0XNsZicv0Hoe5jjoC7I/edit?tab=t.0">Lesson Plan 1 Description</a></li>
+      <li><a href="https://docs.google.com/document/d/1hsrKyG4klbC-ZKmGx48TkXJjEiyeIl4y/edit?tab=t.0">Lesson Plan Rubric</a></li>
+      <li><a href="https://docs.google.com/document/d/11beqB7uWpeW1wT4PE1LDomEh2McowYy-/edit?tab=t.0">Lesson Plan Format 1</a></li>
+      <li><a href="https://drive.google.com/file/d/119nHPuWKB4Arltx2VCwLrVsekKcabZ2p/view">Lesson Plan Format 2 Description</a></li>
+      <li><a href="https://drive.google.com/file/d/19GZT-BdYsbiCAaBneXrwIovTPWiC8DNB/view">Lesson Plan Format 2</a></li>
+      <li><a href="https://drive.google.com/file/d/1qieHXO6A_ciFdM73CA0joOMa8jO8z50R/view">Lesson Plan Format 3</a></li>
+      <li><a href="https://drive.google.com/file/d/19Ak5bRl4aEEBo4p80qXnUZgaEbzkMHsk/view">SPED Inclusion Lesson Plan Format</a></li>
+    </ul>
+  </div>
+</section>
+
+<section id="cooperating" class="section">
+  <h2>Cooperating Teacher Information & Forms</h2>
+  <p><strong><em style="color: green;">DOWNLOAD TO PRINT DOCUMENTS</em></strong></p>
+
+  <!-- Meeting and Narrative side-by-side -->
+  <div style="display: flex; gap: 30px; flex-wrap: wrap; justify-content: space-between;">
+    <!-- Left: Webex + Office Hours -->
+    <div style="flex: 1; min-width: 300px;">
+      <h3 style="color: blue;">Welcome Letter</h3>
+      <div style="background-color: white; padding: 10px; margin: 10px 0;">
+        <p style="color: #c92c2c; font-weight: bold;">
+          Cooperating Teacher Meeting<br>
+          Thursday, September 18, 2025, 3:30-5pm
+        </p>
+        <p>
+          <a href="https://ysu.webex.com/meet/takightlinger">https://ysu.webex.com/meet/takightlinger</a>
+        </p>
+        <h4>Office Hours</h4>
+        <ul>
+          <li>Mon., October 13 — 3:00-5:00pm</li>
+          <li>Tue., November 11— 7:15-8:00am</li>
+          <li>Mon., Decmeber 1 — 3:00-5:00pm</li>
+        </ul>
+        <p>Other times available by appointment, email:<br>
+          <a href="mailto:takightlinger@ysu.edu">takightlinger@ysu.edu</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Right: Narrative/PowerPoint/EDA -->
+    <div style="flex: 0.6; min-width: 250px; background-color: white; padding: 15px; margin-top: 45px;">
+      <strong><a href="https://docs.google.com/presentation/d/1xqzAEj2fXBfU_0SfOC60YHj0tVPV9h7Z/edit?slide=id.p1#slide=id.p1">Narrative Power Point</a></strong><br><br>
+     
+      <strong><a href="https://docs.google.com/presentation/d/1xqzAEj2fXBfU_0SfOC60YHj0tVPV9h7Z/edit?slide=id.p1#slide=id.p1">EDA Information</a></strong>
+    </div>
+  </div>
+
+  <!-- Responsibilities + Observation side-by-side -->
+  <div style="display: flex; gap: 40px; flex-wrap: wrap; justify-content: space-between; margin-top: 30px;">
+    <!-- Left: Responsibilities -->
+    <div style="flex: 1; min-width: 300px;">
+      <ul>
+        <li><a href="https://drive.google.com/file/d/1EPAqkm_LFCeWBp8W-LXnbz_uy8apseAN/view">CT Responsibilities</a></li>
+        <li><a href="https://drive.google.com/file/d/1mPqoribrNMXnACObatzOQh4Urxi-7kOu/view">CT Checklist</a></li>
+        <li><a href="https://drive.google.com/file/d/1fGHKtMW7riWJ6ffd07HvNk6pbAPCYuBD/view">Mentoring Compensation</a></li>
+        <li><a href="https://drive.google.com/file/d/1gsr1RJ51LazTng2ONbPiUW0RkTPE838d/view">Guidelines for Student Teaching handbook</a></li>
+        <li>
+          <a href="https://drive.google.com/file/d/1doav1TEs9OIdeMTmEwwrUTAL_OdZR33f/view" >Outstanding Performance Award Form</a><br>
+            
+            <p style="color: red; font-weight: bold;"> Due April 14, 2025 by 4:00pm</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Right: Observation Schedule -->
+    <div style="flex: 1; min-width: 280px;">
+      <h3 style="color: darkorange;">Observation Evaluation Schedule</h3>
+      <ul>
+        <li><a href="https://drive.google.com/file/d/1ZbK-Lj9liaUMahjaB47_XDbRvRvwtXfW/view">MCE/ELIS/ART: 8 week schedule</a></li>
+        <li><a href="https://drive.google.com/file/d/1BHKRBsh8xB8MYNy1lDgnsLrW-v7o6HFV/view">AYA/SPED/MUSIC: 16 week schedule</a></li>
+        <li><a href="https://drive.google.com/file/d/1B4vAwGAfApaIuHp2bux6zG5iSxrwYUgg/view">Observation Form</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Note Section -->
+  <p style="margin-top: 30px;">
+    <strong style="color: orange;">NOTE:</strong> 
+    Student teachers have various seminar/course responsibilities outside of the student teaching experience. Therefore, student teacher candidates shouldn’t be working extensively, at the school, outside of the contracted teachers’ hours. If there is a need for any time beyond the contracted working hours, it is to be within reason and collaboratively discussed between the cooperating teacher, university supervisor, and student teacher candidate and a schedule arranged with written notification to the principal and Administrator Student Field Experiences. (This does not pertain to district required responsibilities i.e. parent teacher conferences, open houses, school programs, etc.)
+  </p>
+</section>
+
+<section id="supervisor" class="section">
+  <h2>University Supervisor Forms</h2>
+  <p><strong><em style="color: green;">DOWNLOAD TO PRINT</em></strong></p>
+
+  <div style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between; margin-top: 20px;">
+    
+    <!-- Left Column: Observation and Evaluation Schedule -->
+    <div style="flex: 1; min-width: 300px;">
+      <h3 style="color: darkorange;">Observation and Evaluation Schedule</h3>
+      <ul>
+        <li>MCE/ELIS/ART: <a href="https://drive.google.com/file/d/1ZbK-Lj9liaUMahjaB47_XDbRvRvwtXfW/view">8 week schedule</a></li>
+        <li>AYA/SPED/MUSIC: <a href="https://drive.google.com/file/d/1BHKRBsh8xB8MYNy1lDgnsLrW-v7o6HFV/view">16 week schedule</a></li>
+        <li><a href="https://drive.google.com/file/d/1gsr1RJ51LazTng2ONbPiUW0RkTPE838d/view">Guidelines for Student Teaching handbook</a></li>
+      </ul>
+
+      <ul style="margin-top: 20px;">
+        <li><a href="https://drive.google.com/file/d/1-a2Q93bGPH0T7C_1IVBMeQ3lh_l3Yb3S/view">Travel Mileage Log – Concur users only</a></li>
+        <li><a href="https://docs.google.com/document/d/1iaOSRFIwISiU29BmLapMSAVkM0vKdyNy/edit?tab=t.0">University Supervisor Travel Summary</a></a></li>
+      </ul>
+    </div>
+
+  
+    <div style="flex: 1; min-width: 280px;">
+      <h3 style="color: darkorange;">Checklists</h3>
+      <ul>
+        <li><a href="https://docs.google.com/document/d/11BoTpTIZqMuOASkM3eNoif2mww9BtzVF/edit?tab=t.0">8 week checklist</a></li>
+        <li><a href="https://docs.google.com/document/d/1tkFiUSUH1CW_yMuQwIMnDkU0AT0H-Ujq/edit?tab=t.0 ">16 week checklist</a></li>
+      </ul>
+
+      <ul style="margin-top: 20px;">
+        <li>
+          <a href="https://drive.google.com/file/d/1doav1TEs9OIdeMTmEwwrUTAL_OdZR33f/view">Outstanding Performance Award Form<br></a> 
+            
+            <span style="color: red;">Due April 14, 2025 by 4:00pm</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section id="edtpa" class="section">
+  <h2>edTPA Information</h2>
+  <p style="color: red;"><strong>TPA Due:</strong> March 14, 2025</p>
+  <p style="color: red;"><strong>TPA Scores:</strong> April 10, 2025</p>
+
+  <h3 style="color: blue;">TPA VOUCHER APPOINTMENT<br>February 17 - 20, 2025</h3>
+  <p><strong>REQUIRED</strong> in order to submit TPA on Pearson</p>
+
+  <p>Voucher appointments are for:</p>
+  <ul>
+    <li><span style="color: blue;">Music and Art</span> – <span style="color: red;">February 17</span> 8am - 6pm</li>
+    <li><span style="color: blue;">Primary and SPED</span> – <span style="color: red;">February 18</span> 8am - 6pm</li>
+    <li><span style="color: blue;">AYA and MCE</span> – <span style="color: red;">February 20</span> 8am - 6pm</li>
+  </ul>
+  <p>Earlier appointments available upon request</p>
+
+  <p style="color: red; font-weight: bold;">Excused from placement for appointment ONLY</p>
+  <p>Appointments will be held in Beeghly Hall, room 3310</p>
+  <p>For appointment, <span style="text-decoration: underline; color: blue;">all Task 1 uploaded</span>, NOT submitted, on SL&L</p>
+
+  <p><strong>Contact Mrs. Kightlinger:</strong> <a href="mailto:takightlinger@ysu.edu">takightlinger@ysu.edu</a></p>
+  <p style="color: green;">Video and submission assistance available upon request</p>
+</section>
+
+
+<section id="Materials" class="section">
+  <h2 style="font-weight: bold;">Download Materials</h2>
+  <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; margin-top: 30px;">
+    
+    <!-- Handbook Column -->
+    <div style="flex: 1; min-width: 250px;">
+      <h3>Handbook</h3>
+      <ul>
+        <li><a href="#">Art</a></li>
+        <li><a href="#">AYA ELA</a></li>
+          <li><a href="#">AYA MATH</a></li>
+          <li><a href="#">AYA Science</a></li>
+          <li><a href="#">AYA SS</a></li>
+          <li><a href="#">MCE ELA</a></li>
+          <li><a href="#">MCE Math</a></li>
+          <li><a href="#">MCE Science</a></li>
+          <li><a href="#">MCE SS</a></li>
+          <li><a href="#">Music</a></li> 
+      </ul>
+    </div>
+
+    <!-- Forms Column -->
+    <div style="flex: 1; min-width: 250px;">   
+ <h3>Forms</h3>
+      <ul>
+        <li><a href="#">edTPA Verification Form</a></li>
+        <li><a href="#">Parent Consent and Release Form</a></li>
+      </ul>
+    </div>
+
+<!-- Resources Column -->
+    <div style="flex: 1; min-width: 250px;">
+      <h3>Resources</h3>
+      <ul>
+        <li><a href="#">Making Good Choices</a></li>
+        <li><a href="#">Confidentiality and Security</a></li>
+        <li><a href="#">Video Confidentiality Candidates</a></li>
+      </ul>
+    </div>
+  </div>
+  </section>
+    </div>
+  </div> 
+</body>
+</html>
