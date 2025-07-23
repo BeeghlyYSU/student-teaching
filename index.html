@@ -116,25 +116,40 @@ a:hover {
 }
 </style>
   <script>
-    function checkPassword() {
-      const password = prompt("Enter password to access the content:");
-      if (password === "teach2025") {
-        document.getElementById("protected-content").style.display = "flex";
-      } else {
-        alert("Incorrect password!");
-      }
+  function checkPassword() {
+    // Check if password was already validated this session
+    if (sessionStorage.getItem("authenticated") === "true") {
+      document.getElementById("protected-content").style.display = "flex";
+      return;
     }
-function showSection(id) {
-      document.querySelectorAll('.section').forEach(section => {
-        section.classList.remove('active');
-      });
-      document.querySelectorAll('.sidebar a').forEach(link => {
-        link.classList.remove('active');
-      });
-      document.getElementById(id).classList.add('active');
-      document.querySelector(`[data-target='${id}']`).classList.add('active');
+
+    const password = prompt("Enter password to access the content:");
+    if (password === "teach2025") {
+      sessionStorage.setItem("authenticated", "true"); // Store flag
+      document.getElementById("protected-content").style.display = "flex";
+    } else {
+      alert("Incorrect password!");
+      document.body.innerHTML = "<h2 style='color:red; text-align:center; margin-top:50px;'>Access Denied</h2>";
     }
-  </script>
+  }
+
+  function showSection(id) {
+  document.querySelectorAll('.section').forEach(section => {
+    section.classList.remove('active');
+  });
+
+  document.querySelectorAll('.sidebar a').forEach(link => {
+    link.classList.remove('active');
+  });
+
+  document.getElementById(id).classList.add('active');
+  document.querySelector(`[data-target='${id}']`).classList.add('active');
+
+  // Save to sessionStorage
+  sessionStorage.setItem('lastSection', id);
+}
+</script>
+
 </head>
 <body onload="checkPassword()">
   <div id="protected-content" class="container protected">
@@ -204,7 +219,7 @@ function showSection(id) {
   </p>
 
   <p style="color: green; font-weight: bold;">
-    Required to complete the following, on TaskStream, by the end of orientation
+    Required to complete the following, on SL&L, by the end of orientation
   </p>
 
   <ul style="list-style-type: circle; margin-left: 20px;">
@@ -213,7 +228,7 @@ function showSection(id) {
     <li><p style="color: blue;">Licensure Information and Timelines</p></li>
     <li><p style="color: blue;">ST Orientation Evaluation</p></li>
     <li>
-      <p style="color: blue;">Educators and the Opioid Crisis V2 upload score report to TaskStream DRF Student Teaching Unit</p><br>
+      <p style="color: blue;">Educators and the Opioid Crisis V2 upload score report to Sl&L DRF Student Teaching Unit</p><br>
        <a href="https://osuehe.catalog.instructure.com" style="color:gray 14px;">https://osuehe.catalog.instructure.com/courses/educators-and-the-opioid-crisis</a>
       </span>
     </li>
@@ -235,7 +250,7 @@ function showSection(id) {
     <div style="flex: 1; min-width: 280px;">
       <h3 style="color: red;">Important Information</h3>
       <ul>
-        <li><a href="https://drive.google.com/file/d/1ni4cxq2eF9JAVpN_KME_U8YYXEN4pzKF/view" style="color: blue;">Orientation Schedule</a></li>
+        <li><a href="https://drive.google.com/file/d/1W11qkU75j3dnBD4j7rk3scJoRWc6ZAkH/view?usp=sharing" style="color: blue;">Orientation Schedule</a></li>
         <li><a href="https://docs.google.com/document/d/1gH2wSo4JYxhbn0ex1wK7Zq-kRnnKvHGZ/edit?tab=t.0" style="color: blue;">Resume Template and Handshake</a></li>
         <li><a href="https://drive.google.com/file/d/1gsr1RJ51LazTng2ONbPiUW0RkTPE838d/view" style="font-style: italic; color: blue;">Guidelines for Student Teaching handbook</a></li>
       </ul>
@@ -244,7 +259,7 @@ function showSection(id) {
       <ul>
         <li>
           <span style="color: blue; font-weight: bold;">TCESC Schedule</span><br>
-          <span>Thursday, January 9, 2025<br>
+          <span>Wednesday, August 13, 2025<br>
           7:45am - 3:45pm<br>
           Trumbull County Educational Service Center<br>
           6000 Youngstown-Warren Rd.<br>
@@ -257,8 +272,8 @@ function showSection(id) {
     <div style="flex: 1; min-width: 280px;">
       <h3 style="color: red;">Instruction, Observation, and Evaluation Schedule</h3>
       <ul>
-        <li><a href="https://drive.google.com/file/d/1BHKRBsh8xB8MYNy1lDgnsLrW-v7o6HFV/view" style="color: blue;">AYA/SPED/MUSIC<br>16 week schedule</a></li>
-        <li><a href="https://drive.google.com/file/d/1ZbK-Lj9liaUMahjaB47_XDbRvRvwtXfW/view" style="color: blue;">MCE/ELIS//ART<br>8 week schedule</a></li>
+        <li><a href="https://docs.google.com/document/d/1D4KVZ0rJBXDL4umiad-UH2zQ6S7EJq_C/edit?tab=t.0#heading=h.ei14bzqb96zr" style="color: blue;">AYA/SPED/MUSIC<br>16 week schedule</a></li>
+        <li><a href="https://docs.google.com/document/d/1PSJu3hpXDHXjcEerBdZKU3Leob1idq84/edit?tab=t.0#heading=h.lmuinf1umrj2" style="color: blue;">MCE/ELIS//ART<br>8 week schedule</a></li>
       </ul>
 
       <ul>
@@ -286,7 +301,7 @@ function showSection(id) {
  <!-- Right Column -->
     <div style="flex: 1; min-width: 280px;">
       <ul>
-        <li><a href="https://drive.google.com/file/d/1xHiz2PMwPUFfQzkNfGagazSCQnjQnt-q/view">EDA Rubric </a></li>
+        <li><a href="https://drive.google.com/file/d/1NI54OXKRJT23y9ZSyEcF7X6zQnExNgBF/view?usp=sharing">EDA Rubric </a></li>
 <li><a href="https://drive.google.com/file/d/1VcQxCLnY9PlDNV6_2dwR5WyNTDgSVela/view">MCE Final Assessment </a></li>
 </ul></div>
 </section>
@@ -301,7 +316,6 @@ function showSection(id) {
     <ul style="list-style-type: disc; padding-left: 20px;">
       <li><a href="https://drive.google.com/file/d/1dVEEnMXHFkUUQXky77iZOgZXRG32yRd9/view">ST Absentee Form</a></li>
       <li><a href="https://drive.google.com/file/d/13FvS5exivNMZSJjb2nsOgNFLCfTtm0Ta/view">Parent Teacher Conference Verification</a></li>
-      <li><a href="https://drive.google.com/file/d/1gPNt_L2sH269faf3BUTQ0I_Gtrxa4aix/view">Authorization and Waiver Form</a></li>
       <li><a href="https://docs.google.com/document/d/1R8aFCkXY6N5Aa6rtC_A4FHaflqdSbcw8/edit?tab=t.0">Weekly Progress Log</a></li>
     </ul>
 
@@ -361,7 +375,7 @@ function showSection(id) {
 
     <!-- Right: Narrative/PowerPoint/EDA -->
     <div style="flex: 0.6; min-width: 250px; background-color: white; padding: 15px; margin-top: 45px;">
-      <strong><a href="https://docs.google.com/presentation/d/1xqzAEj2fXBfU_0SfOC60YHj0tVPV9h7Z/edit?slide=id.p1#slide=id.p1">Narrative Power Point</a></strong><br><br>
+      <strong><a href="#">Narrative Power Point</a></strong><br><br>
      
       <strong><a href="https://docs.google.com/presentation/d/1xqzAEj2fXBfU_0SfOC60YHj0tVPV9h7Z/edit?slide=id.p1#slide=id.p1">EDA Information</a></strong>
     </div>
@@ -379,7 +393,7 @@ function showSection(id) {
         <li>
           <a href="https://drive.google.com/file/d/1doav1TEs9OIdeMTmEwwrUTAL_OdZR33f/view" >Outstanding Performance Award Form</a><br>
             
-            <p style="color: red; font-weight: bold;"> Due April 14, 2025 by 4:00pm</p>
+            <p style="color: red; font-weight: bold;"> Due November 17, 2025 by 4:00pm</p>
           </a>
         </li>
       </ul>
@@ -389,18 +403,14 @@ function showSection(id) {
     <div style="flex: 1; min-width: 280px;">
       <h3 style="color: darkorange;">Observation Evaluation Schedule</h3>
       <ul>
-        <li><a href="https://drive.google.com/file/d/1ZbK-Lj9liaUMahjaB47_XDbRvRvwtXfW/view">MCE/ELIS/ART: 8 week schedule</a></li>
-        <li><a href="https://drive.google.com/file/d/1BHKRBsh8xB8MYNy1lDgnsLrW-v7o6HFV/view">AYA/SPED/MUSIC: 16 week schedule</a></li>
+        <li><a href="https://docs.google.com/document/d/1PSJu3hpXDHXjcEerBdZKU3Leob1idq84/edit?tab=t.0#heading=h.lmuinf1umrj2">MCE/ELIS/ART: 8 week schedule</a></li>
+        <li><a href="https://docs.google.com/document/d/1D4KVZ0rJBXDL4umiad-UH2zQ6S7EJq_C/edit?tab=t.0#heading=h.ei14bzqb96zr">AYA/SPED/MUSIC: 16 week schedule</a></li>
         <li><a href="https://drive.google.com/file/d/1B4vAwGAfApaIuHp2bux6zG5iSxrwYUgg/view">Observation Form</a></li>
       </ul>
     </div>
   </div>
 
-  <!-- Note Section -->
-  <p style="margin-top: 30px;">
-    <strong style="color: orange;">NOTE:</strong> 
-    Student teachers have various seminar/course responsibilities outside of the student teaching experience. Therefore, student teacher candidates shouldn’t be working extensively, at the school, outside of the contracted teachers’ hours. If there is a need for any time beyond the contracted working hours, it is to be within reason and collaboratively discussed between the cooperating teacher, university supervisor, and student teacher candidate and a schedule arranged with written notification to the principal and Administrator Student Field Experiences. (This does not pertain to district required responsibilities i.e. parent teacher conferences, open houses, school programs, etc.)
-  </p>
+  
 </section>
 
 <section id="supervisor" class="section">
@@ -413,8 +423,8 @@ function showSection(id) {
     <div style="flex: 1; min-width: 300px;">
       <h3 style="color: darkorange;">Observation and Evaluation Schedule</h3>
       <ul>
-        <li>MCE/ELIS/ART: <a href="https://drive.google.com/file/d/1ZbK-Lj9liaUMahjaB47_XDbRvRvwtXfW/view">8 week schedule</a></li>
-        <li>AYA/SPED/MUSIC: <a href="https://drive.google.com/file/d/1BHKRBsh8xB8MYNy1lDgnsLrW-v7o6HFV/view">16 week schedule</a></li>
+        <li>MCE/ELIS/ART: <a href="https://docs.google.com/document/d/1PSJu3hpXDHXjcEerBdZKU3Leob1idq84/edit?tab=t.0#heading=h.lmuinf1umrj2">8 week schedule</a></li>
+        <li>AYA/SPED/MUSIC: <a href="https://docs.google.com/document/d/1D4KVZ0rJBXDL4umiad-UH2zQ6S7EJq_C/edit?tab=t.0#heading=h.ei14bzqb96zr">16 week schedule</a></li>
         <li><a href="https://drive.google.com/file/d/1gsr1RJ51LazTng2ONbPiUW0RkTPE838d/view">Guidelines for Student Teaching handbook</a></li>
       </ul>
 
@@ -436,7 +446,7 @@ function showSection(id) {
         <li>
           <a href="https://drive.google.com/file/d/1doav1TEs9OIdeMTmEwwrUTAL_OdZR33f/view">Outstanding Performance Award Form<br></a> 
             
-            <span style="color: red;">Due April 14, 2025 by 4:00pm</span>
+            <span style="color: red;">Due November 17, 2025 by 4:00pm</span>
           </a>
         </li>
       </ul>
@@ -445,17 +455,17 @@ function showSection(id) {
 </section>
 <section id="edtpa" class="section">
   <h2>edTPA Information</h2>
-  <p style="color: red;"><strong>TPA Due:</strong> March 14, 2025</p>
-  <p style="color: red;"><strong>TPA Scores:</strong> April 10, 2025</p>
+  <p style="color: red;"><strong>TPA Due:</strong> October 30, 2025</p>
+  <p style="color: red;"><strong>TPA Scores:</strong> November 26, 2025</p>
 
-  <h3 style="color: blue;">TPA VOUCHER APPOINTMENT<br>February 17 - 20, 2025</h3>
+  <h3 style="color: blue;">TPA VOUCHER APPOINTMENT<br>October 6-8, 2025</h3>
   <p><strong>REQUIRED</strong> in order to submit TPA on Pearson</p>
 
   <p>Voucher appointments are for:</p>
   <ul>
-    <li><span style="color: blue;">Music and Art</span> – <span style="color: red;">February 17</span> 8am - 6pm</li>
-    <li><span style="color: blue;">Primary and SPED</span> – <span style="color: red;">February 18</span> 8am - 6pm</li>
-    <li><span style="color: blue;">AYA and MCE</span> – <span style="color: red;">February 20</span> 8am - 6pm</li>
+    <li><span style="color: blue;">Music and Art</span> – <span style="color: red;">October 6</span> 8am - 6pm</li>
+    <li><span style="color: blue;">Primary and SPED</span> – <span style="color: red;">October 7</span> 8am - 6pm</li>
+    <li><span style="color: blue;">AYA and MCE</span> – <span style="color: red;">October 8</span> 8am - 6pm</li>
   </ul>
   <p>Earlier appointments available upon request</p>
 
@@ -465,6 +475,20 @@ function showSection(id) {
 
   <p><strong>Contact Mrs. Kightlinger:</strong> <a href="mailto:takightlinger@ysu.edu">takightlinger@ysu.edu</a></p>
   <p style="color: green;">Video and submission assistance available upon request</p>
+  <hr>
+<h3 style="margin-top: 30px;">edTPA Resources</h3>
+<ul>
+  <li>
+    <a href="https://docs.google.com/document/d/1WUQWP9zv49R0NSnmTJTAvdeHY0VUPJie/edit?tab=t.0" target="_blank" style="color: #0000EE; ">
+      How to Access Templates on SL&L
+    </a>
+  </li>
+  <li>
+    <a href="https://drive.google.com/file/d/1R35GUePZ6kXNulrrPbgNLa1KlMHqEKGp/view?usp=sharing" target="_blank" style="color: #0000EE;">
+      edTPA Quick Start Guide - Registration, Uploading, and Submission Assistance
+    </a>
+  </li>
+</ul>
 </section>
 
 
@@ -478,7 +502,7 @@ function showSection(id) {
       <ul>
         <li><a href="#">Art</a></li>
         <li><a href="#">AYA ELA</a></li>
-          <li><a href="#">AYA MATH</a></li>
+          <li><a href="#">AYA MATH</a></li> 
           <li><a href="#">AYA Science</a></li>
           <li><a href="#">AYA SS</a></li>
           <li><a href="#">MCE ELA</a></li>
@@ -493,7 +517,7 @@ function showSection(id) {
     <div style="flex: 1; min-width: 250px;">   
  <h3>Forms</h3>
       <ul>
-        <li><a href="#">edTPA Verification Form</a></li>
+        <li><a href="https://drive.google.com/file/d/1mJN2zc6oYAxIFiIqE4A9olL6vSxVr5pe/view?usp=sharing">edTPA Verification Form</a></li>
         <li><a href="#">Parent Consent and Release Form</a></li>
       </ul>
     </div>
@@ -510,6 +534,24 @@ function showSection(id) {
   </div>
   </section>
     </div>
-  </div> 
+  
+  
+  <script>
+    window.onload = function () {
+      checkPassword();
+
+      let lastSection = sessionStorage.getItem('lastSection');
+      if (lastSection && document.getElementById(lastSection)) {
+        showSection(lastSection);
+      } else {
+        const firstSection = document.querySelector('.section');
+        const firstLink = document.querySelector('.sidebar a');
+        if (firstSection) firstSection.classList.add('active');
+        if (firstLink) firstLink.classList.add('active');
+      }
+    };
+  
+</script>
+</div> 
 </body>
 </html>
